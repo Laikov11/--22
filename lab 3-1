@@ -1,0 +1,19 @@
+int main()
+{
+    int mas[N][N]; 
+    bool ok = 1;
+    
+    for (int i=0; i<N; i++)
+        for (int j=0; j<N; j++)
+            cin >> mas[i][j];  // Тупо по порядку вводим матрицу (можно приукрасить но важна суть)
+    for (int i=0; i<N; i++) {
+        for (int j=0; j<N-1-i; j++)
+            if (mas[i][j] != mas[N-1-i][N-1-j]) // Основная проверка симметричности
+                ok = 0;
+    }   
+    if (ok)
+        cout << "Matrix is simetry ;)" << endl;
+    else
+        cout << "Matrix is not simetry ;(" << endl;
+    getch();
+}
